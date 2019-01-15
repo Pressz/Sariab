@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/m1"
+        android:title="پروفایل من" />
+    <item
+        android:id="@+id/m2"
+        android:title="سوابق خرید شما" />
+    <item
+        android:id="@+id/m3"
+        android:title="شهر من"
+        />
+    <item
+        android:id="@+id/m4"
+        android:title="نظر سنجی" />
+    <item
+        android:id="@+id/m5"
+        android:title="سوالات متداول" />
+    <item
+        android:id="@+id/m6"
+        android:title="معرفی به دوستان" />
+    <item
+        android:id="@+id/m7"
+        android:title="درباره ما" />
+
+</menu>

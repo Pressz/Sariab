@@ -1,0 +1,11 @@
+.message{
+    text-align: center;
+    position: fixed;
+    top: 1.5em;
+    left: 1.5em;
+    width: 30em;
+    border: solid white.1em;
+    padding: 1em;
+    border-radius: .4em;
+    z-index: 1000000;
+}

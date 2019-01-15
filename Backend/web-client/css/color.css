@@ -1,0 +1,93 @@
+body{
+    color:#2a2e12;
+    background-color: white;
+}
+header {
+    color: white;
+    background-color: #1a237e;
+}
+
+header >h1 {
+    color: white;
+}
+nav.menu-bar{
+    border-bottom: #ffd000 solid .05em;
+    background-color: #dbdbdb;
+    color: #777777;
+}
+nav.menu-bar ul{
+    
+}
+nav.menu-bar ul li a{
+
+}
+
+nav.menu-bar ul li a:hover {
+    background-color: #cccccc;
+}
+.content{
+    background-color: rgb(230, 230, 230);
+}
+.content > h1{
+    background-color: #2b303a;
+    color: white;
+}
+.message{
+    background-color: rgba(245, 245, 245, 0.9);
+}
+.message .error{ 
+    color: red;
+}
+.message .confirm{
+    color: rgb(51, 161, 0);
+}
+#theTree{
+    background-color: #dbdbdb;
+}
+form{
+    border-color: rgb(1, 48, 9);
+}
+footer {
+    color: #777777;
+}
+footer a{
+    color: inherit;
+}
+
+
+input[type="text"], input[type="password"],
+textarea, select
+{
+
+}
+
+input[type="button"], input[type="submit"]{
+    background: rgb(238,238,238);
+    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+    background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
+}
+input[type="text"]:hover,
+input[type="text"]:active,
+input[type="text"]:focus,
+input[type="password"]:hover,
+input[type="password"]:active,
+input[type="password"]:focus,
+select:hover,
+select:active,
+select:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
+{
+    
+}
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus{
+
+}

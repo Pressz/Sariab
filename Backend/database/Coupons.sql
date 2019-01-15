@@ -1,0 +1,13 @@
+CREATE TABLE `Coupons` (
+`Code` VARCHAR(20) NOT NULL ,
+`Name` VARCHAR(300) NOT NULL ,
+`Start` DATETIME NULL ,
+`Expiry` DATETIME NULL ,
+`FoodType` VARCHAR(50) NULL ,
+`OffPercent` TINYINT NOT NULL ,
+`OffScalar` DOUBLE NOT NULL
+) ENGINE = InnoDB;
+
+ALTER TABLE `Coupons` CHANGE `OffScalar` `OffScalar` DOUBLE NULL;
+ALTER TABLE `Coupons` CHANGE `OffPercent` `OffPercent` DOUBLE NULL;
+ALTER TABLE `Coupons` CHANGE `Code` `Code` VARCHAR(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci UNIQUE;

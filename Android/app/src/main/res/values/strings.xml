@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Sariab</string>
+    <string name="title_activity_login">لاگین</string>
+    <string name="accepted_privacy_policies">با ثبت نام در این برنامه شما شرایط محرمانگی و حریم شخصی ما را پذیرفته اید</string>
+    <string name="login">وارد شو!</string>
+    <string name="register">ثبت نام</string>
+    <string name="scie">آموزشی</string>
+    <string name="entr">سرگرمی</string>
+    <string name="inte">داخلی</string>
+    <string name="resv">رزرو</string>
+
+    <string-array name="cities">
+        <item>مشهد</item>
+        <item>بجنورد</item>
+        <item>همدان</item>
+        <item>تهران</item>
+        <item>کرج</item>
+        <item>شیراز</item>
+    </string-array>
+
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>

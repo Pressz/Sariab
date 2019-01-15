@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:orientation="vertical"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_profile" />
+
+        <eu.long1.spacetablayout.SpaceTabLayout
+            android:id="@+id/spaceTabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:number_of_tabs="four"
+            app:starting_position="one"
+
+            >
+
+        </eu.long1.spacetablayout.SpaceTabLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</LinearLayout>
+

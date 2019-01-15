@@ -1,0 +1,1 @@
+select Id, @param1, CONCAT(@param2, " ", @param3) as Fullname from `Users` WHERE `Type` = 'USER';

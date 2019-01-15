@@ -1,0 +1,93 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    direction: rtl;
+}
+
+header{
+    display: block;
+    margin: 0;
+    padding: 1em;
+}
+header h1{
+    display: none;
+}
+header .logo{
+    display: block;
+    margin: 0 auto 0 auto;
+    height: 4em;
+}
+nav.menu-bar{
+    width: 100%;
+    height: auto;
+}
+nav.menu-bar ul{
+    font-size: .9em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: .5em;
+    overflow: hidden;
+    height: inherit;
+    display: inline-block;
+}
+nav.menu-bar li, nav.menu-bar div.operator-menu, nav.menu-bar div.operator-menu div.admin-menu{
+    float: right;
+    height: inherit;
+}
+nav.menu-bar li:first-of-type *{
+    
+    
+}
+nav.menu-bar ul li select{
+    font-size: .9em;
+    padding: 0;
+    margin: 0;
+}
+nav.menu-bar ul li a{
+    height: inherit;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    padding: .5em;
+    padding: .5em;    
+    margin-left: .5em;
+    margin-right: .5em;
+    text-decoration: none;
+}
+nav.menu-bar img{
+    height: 1em;
+    margin-left: 1em;
+}
+
+.content{
+    margin: 2em;
+
+}
+.content > h1{
+    text-align: center;
+    margin: 0;
+    display: block;
+    font-style: normal;
+    font-size: inherit;
+}
+.content img{
+    max-width: 100%;
+}
+
+footer{
+    text-align: center; 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+@media all and (max-width: 80em) {
+
+}
+@media all and (max-width: 80em) {
+
+}

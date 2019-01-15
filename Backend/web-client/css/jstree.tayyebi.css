@@ -1,0 +1,23 @@
+#theTree .jstree-children > li{
+    margin-top: .5em;;
+}
+#theTree .jstree-themeicon{
+    display: none;
+}
+#theTree .jstree-checkbox{
+    background: none;
+    background-image: url('../img/uncheckedImage.png');
+    width: 32px;
+    height: 29px;
+    margin-left: .5em;
+}
+#theTree .jstree-undetermined{
+    box-shadow: 0 0 .1em black;
+    border-radius: 500%;
+}
+#theTree .jstree-clicked .jstree-checkbox , #theTree .jstree-hovered .jstree-checkbox {
+    background: none;
+    background-image: url('../img/checkedImage.png');
+    width: 32px;
+    height: 29px;
+}

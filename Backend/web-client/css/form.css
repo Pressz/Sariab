@@ -1,0 +1,16 @@
+form{
+    display: block;
+    margin:0 auto 1em auto;
+    padding: 1em;
+    border-radius: .5em;
+    background-color: rgb(233, 233, 233);
+}
+
+form#login{
+    background-image: url('../img/login.png');
+    background-repeat: no-repeat;
+    background-size: 5em;
+    background-position: top center;
+    padding: 5em;
+    text-align: center;
+}
