@@ -1,1 +1,0 @@
-SELECT Id, Firstname, Lastname, Username, TO_BASE64(BinImage) as BinImage FROM `Users` WHERE `Type` = 'USER';

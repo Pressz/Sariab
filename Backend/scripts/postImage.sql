@@ -1,1 +1,0 @@
-SELECT `Id`, TO_BASE64(`BinImage`) as BinImage FROM `Posts` WHERE `Id`=@PostId LIMIT 1
