@@ -23,42 +23,6 @@ public class MainPresenter implements IMainPresenter {
     }
 
     @Override
-    public void doDownloadList(JSONArray response){
-
-        ArrayList<Post> foodListA = new ArrayList<Post>();
-        ArrayList<Post> foodListB = new ArrayList<Post>();
-        ArrayList<Post> foodListC = new ArrayList<Post>();
-        ArrayList<Post> foodListD = new ArrayList<Post>();
-        int i = 0;
-        if (response != null)
-            for (i = 0 ; i < response.length() ; i++)
-            {
-                try {
-                    JSONObject jo = (JSONObject) response.get(i);
-                    switch (jo.getString("Type")) {
-                        case "scie":
-                            foodListA.add(new Post(jo.getString("Id"),jo.getString("Title") + "", jo.getString("Description") + "", null));
-                            break;
-                        case "entr":
-                            foodListB.add(new Post(jo.getString("Id"),jo.getString("Title") + "", jo.getString("Description") + "", null));
-                            break;
-                        case "inte":
-                            foodListC.add(new Post(jo.getString("Id"),jo.getString("Title") + "", jo.getString("Description") + "", null));
-                            break;
-                        case "reso":
-                            foodListD.add(new Post(jo.getString("Id"),jo.getString("Title") + "", jo.getString("Description") + "", null));
-                            break;
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            mainView.onBindLists(foodListA, foodListB, foodListC, foodListD);
-    }
-
-    @Override
     public void doDownloadFood(){
         Access acc = new Access("postController.php", "");
 
@@ -87,5 +51,29 @@ public class MainPresenter implements IMainPresenter {
                     mainView.onBindListError("داده‌ای دریافت نشد");
                 }});
         }
+    }
+
+    @Override
+    public void doDownloadList(JSONArray response){
+
+        ArrayList<Post> foodListA = new ArrayList<Post>();
+        int i = 0;
+        if (response != null)
+            for (i = 0 ; i < response.length() ; i++)
+            {
+                try {
+                    JSONObject jo = (JSONObject) response.get(i);
+                    switch (jo.getString("Type")) {
+                        case "scie":
+                            foodListA.add(new Post(jo.getString("Id"),jo.getString("Title") + "", jo.getString("Description") + "", null));
+                            break;
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        mainView.onBindLists(foodListA);
     }
 }

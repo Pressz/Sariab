@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
-import com.gordarg.sariab.Fragments.FragmentA;
-import com.gordarg.sariab.Fragments.FragmentB;
-import com.gordarg.sariab.Fragments.FragmentC;
-import com.gordarg.sariab.Fragments.FragmentD;
+import com.gordarg.sariab.Adapters.PostAdapter;
 import com.gordarg.sariab.Models.Post;
 import com.gordarg.sariab.Models.User;
 import com.gordarg.sariab.Presenters.MainPresenter;
@@ -20,14 +19,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.dmoral.toasty.Toasty;
-import eu.long1.spacetablayout.SpaceTabLayout;
 
 public class MainActivity extends RexaBaseActivity implements IMainView {
 
-    SpaceTabLayout tabLayout;
     Bundle _savedInstanceState;
 
     static User loggedin_user;
+
+    PostAdapter adapter;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,41 +57,32 @@ public class MainActivity extends RexaBaseActivity implements IMainView {
     }
 
 
+
     @Override
-    public void onBindLists(final ArrayList<Post> foodListA, final ArrayList<Post> foodListB, final ArrayList<Post> foodListC, final ArrayList<Post> foodListD) {
-
-        List<Fragment> fragmentList = new ArrayList<>();
-        Bundle bundle;
-
-        FragmentA fragmentA = new FragmentA();
-        bundle = new Bundle();
-        bundle.putSerializable("list", foodListA);
-        fragmentA.setArguments(bundle);
-        fragmentList.add(fragmentA);
-
-        FragmentB fragmentB = new FragmentB();
-        bundle = new Bundle();
-        bundle.putSerializable("list", foodListB);
-        fragmentB.setArguments(bundle);
-        fragmentList.add(fragmentB);
-
-        FragmentC fragmentC = new FragmentC();
-        bundle = new Bundle();
-        bundle.putSerializable("list", foodListC);
-        fragmentC.setArguments(bundle);
-        fragmentList.add(fragmentC);
-
-        FragmentD fragmentD = new FragmentD();
-        bundle = new Bundle();
-        bundle.putSerializable("list", foodListD);
-        fragmentD.setArguments(bundle);
-        fragmentList.add(fragmentD);
+    public void onBindLists(final ArrayList<Post> posts) {
 
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
-        tabLayout = (SpaceTabLayout) findViewById(R.id.spaceTabLayout);
-        tabLayout.initialize(viewPager, getSupportFragmentManager(),
-                fragmentList, _savedInstanceState);
+        // Fake data
+        // TODO: This segment is just for test purpose only
+        // And it must be removed
+        ArrayList<Post> foodList = new ArrayList<Post>();
+        foodList.add(new Post("1", "Title 1 ", "Description 1 ", null));
+        foodList.add(new Post("1", "Title 1 ", "Description 1 ", null));
+        foodList.add(new Post("1", "Title 1 ", "Description 1 ", null));
+        foodList.add(new Post("1", "Title 1 ", "Description 1 ", null));
+
+
+//        if (foodList == null)
+//            foodList = (ArrayList<Post>) getArguments().getSerializable("list");
+//        getArguments().remove("list");
+        adapter = new PostAdapter(getApplicationContext(), foodList);
+
+
+        recyclerView = (RecyclerView)findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        recyclerView.setAdapter(adapter);
 
     }
 
@@ -106,7 +97,7 @@ public class MainActivity extends RexaBaseActivity implements IMainView {
     @Override
     public void onBindListError(String message) {
         // TODO: Open Settings startActivity(new  );
-        finish();
+//        finish();
         Toasty.error(this, message, Toast.LENGTH_SHORT).show();
     }
 

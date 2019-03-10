@@ -5,6 +5,6 @@ import com.gordarg.sariab.Models.Post;
 import java.util.ArrayList;
 
 public interface IMainView {
-    void onBindLists(ArrayList<Post> foodListA, ArrayList<Post> foodListB, ArrayList<Post> foodListC, ArrayList<Post> foodListD);
+    void onBindLists(ArrayList<Post> foodListA);
     void onBindListError(String message);
 }

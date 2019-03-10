@@ -17,10 +17,7 @@
         <activity
             android:name="com.gordarg.sariab.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- TODO: maybe here its the start point! -->
         </activity>
         <activity
             android:name="com.gordarg.sariab.ProfileActivity"
@@ -28,7 +25,10 @@
         <activity
             android:name="com.gordarg.sariab.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <!-- TODO: maybe here its the start point! -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.gordarg.sariab.DetailsActivity"
