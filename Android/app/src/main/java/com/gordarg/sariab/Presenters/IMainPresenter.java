@@ -4,5 +4,5 @@ import org.json.JSONArray;
 
 public interface IMainPresenter {
     void doDownloadList(JSONArray response);
-    void doDownloadFood();
+    void doDownloadPost();
 }

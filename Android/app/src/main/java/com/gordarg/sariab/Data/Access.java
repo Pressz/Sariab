@@ -16,6 +16,7 @@ import org.w3c.dom.Document;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -32,32 +33,31 @@ public class Access {
     private String parameters;
 
     // Alternative for Get() which allows us to download xml
-    public String GetRss() throws ExecutionException, InterruptedException, NullPointerException, JSONException {
+    public JSONArray GetRss() throws ExecutionException, InterruptedException, NullPointerException, JSONException {
 
+        // Url to feed
         String url = Network.rss_end_point.toString();
+
+        // Plain text XML
         String response = new GetRequestXml().execute(url).get().getResult();
 
+        // Xml to JSONObject
+        JSONObject xmlJSONObj = XML.toJSONObject( response);
 
-        try {
-            JSONObject xmlJSONObj = XML.toJSONObject( response);
-            String jsonPrettyPrintString = xmlJSONObj.toString(4);
-            System.out.println(jsonPrettyPrintString);
-        }
-        catch (Exception exp)
-        {
-            exp.printStackTrace();
-        }
 
-        return null;
+        JSONObject rss = (JSONObject) xmlJSONObj.get("rss");
 
-//        JSONObject FuckMeHard = XML.toJSONObject(response);
-//
-//        String json = FuckMeHard.toString();
-//        return json;
+        JSONObject channel = (JSONObject) rss.get("channel");
 
-        // XML -> JSON
-        // JSON -> Json Array
+        channel.remove("title");
+        channel.remove("description");
+        channel.remove("link");
+        channel.remove("image");
+        channel.remove("language");
 
+        JSONArray items = (JSONArray) channel.getJSONArray("item");
+
+        return items;
 
     }
 

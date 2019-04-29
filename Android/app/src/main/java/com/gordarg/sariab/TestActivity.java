@@ -20,7 +20,7 @@ public class TestActivity extends RexaBaseActivity {
 
         Access access = new Access(null, null);
         try {
-            String response  = access.GetRss();
+            String response  = access.GetRss().toString(4);
             TextView tv3 = findViewById(R.id.textView3);
             tv3.setText(response);
 

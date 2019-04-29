@@ -52,7 +52,7 @@ public class MainActivity extends RexaBaseActivity implements IMainView {
         super.onStart();
 
         final MainPresenter mainPresenter = new MainPresenter(this);
-        mainPresenter.doDownloadFood();
+        mainPresenter.doDownloadPost();
 
     }
 
@@ -61,22 +61,7 @@ public class MainActivity extends RexaBaseActivity implements IMainView {
     @Override
     public void onBindLists(final ArrayList<Post> posts) {
 
-
-        // Fake data
-        // TODO: This segment is just for test purpose only
-        // And it must be removed
-        ArrayList<Post> foodList = new ArrayList<Post>();
-        foodList.add(new Post("1", "Title 1 ", "Description 1 ", null));
-        foodList.add(new Post("1", "Title 1 ", "Description 1 ", null));
-        foodList.add(new Post("1", "Title 1 ", "Description 1 ", null));
-        foodList.add(new Post("1", "Title 1 ", "Description 1 ", null));
-
-
-//        if (foodList == null)
-//            foodList = (ArrayList<Post>) getArguments().getSerializable("list");
-//        getArguments().remove("list");
-        adapter = new PostAdapter(getApplicationContext(), foodList);
-
+        adapter = new PostAdapter(getApplicationContext(), posts);
 
         recyclerView = (RecyclerView)findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);

@@ -23,11 +23,11 @@ public class MainPresenter implements IMainPresenter {
     }
 
     @Override
-    public void doDownloadFood(){
-        Access acc = new Access("postController.php", "");
+    public void doDownloadPost(){
+        Access acc = new Access(null, null);
 
         try {
-            JSONArray response = acc.Get();
+            JSONArray response = acc.GetRss();
             doDownloadList(response);
         }
         catch (ExecutionException e) {
@@ -56,24 +56,30 @@ public class MainPresenter implements IMainPresenter {
     @Override
     public void doDownloadList(JSONArray response){
 
-        ArrayList<Post> foodListA = new ArrayList<Post>();
-        int i = 0;
-        if (response != null)
-            for (i = 0 ; i < response.length() ; i++)
-            {
-                try {
-                    JSONObject jo = (JSONObject) response.get(i);
-                    switch (jo.getString("Type")) {
-                        case "scie":
-                            foodListA.add(new Post(jo.getString("Id"),jo.getString("Title") + "", jo.getString("Description") + "", null));
-                            break;
-                    }
+        if (response == null)
+        {
+            // TODO: Error
+            return;
+        }
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+        ArrayList<Post> postList = new ArrayList<Post>();
+        for (int i = 0 ; i < response.length() ; i++)
+        {
+            try {
+                JSONObject jo = (JSONObject) response.get(i);
+                postList.add(
+                        new Post(
+                            null,
+                            jo.getString("title") + "",
+                            jo.getString("description") + "",
+                            null
+
+                        )
+                );
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-
-        mainView.onBindLists(foodListA);
+        }
+        mainView.onBindLists(postList);
     }
 }
