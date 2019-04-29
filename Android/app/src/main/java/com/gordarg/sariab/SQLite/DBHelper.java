@@ -10,7 +10,10 @@ import com.gordarg.sariab.Configuration.App;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "goldenrose.db";
+
+    // /data/data/com.gordarg.sariab/databases/sariab.db
+
+    public static final String DATABASE_NAME = "sariab.db";
 
     private HashMap hp;
 

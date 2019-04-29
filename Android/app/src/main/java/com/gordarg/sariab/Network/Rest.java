@@ -27,7 +27,7 @@ public class Rest implements IRest {
             this.urlConnection.setConnectTimeout(3000);
 
             // Connection headers
-            this.urlConnection.setRequestProperty("User-Agent", Network.agent + "-" + App.version.toString());
+            // this.urlConnection.setRequestProperty("User-Agent", Network.agent + "-" + App.version.toString());
             // this.urlConnection.setRequestProperty("Accept", "application/vnd.github.v3+json");
             // this.urlConnection.setRequestProperty("Contact-Me","hathibelagal@example.com");
 

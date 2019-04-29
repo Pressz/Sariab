@@ -20,16 +20,18 @@ public class Rss implements IRss {
     private URL apiEndPoint;
     private HttpURLConnection urlConnection;
 
+
+    // Sets request header
     public Rss(String url) throws IOException {
 
         // Endpoint configuration
-        this.apiEndPoint = new URL(Network.api_end_point.toString() + url);
+        this.apiEndPoint = new URL(url);
         this.urlConnection = (HttpURLConnection) apiEndPoint.openConnection();
         this.urlConnection.setConnectTimeout(3000);
 
         // Connection headers
         this.urlConnection.setRequestProperty("User-Agent", Network.agent + "-" + App.version.toString());
-         this.urlConnection.setRequestProperty("Accept", "application/xml");
+        this.urlConnection.setRequestProperty("Accept", "application/xml");
 
     }
 
@@ -55,6 +57,8 @@ public class Rss implements IRss {
         return (short) this.urlConnection.getResponseCode();
     }
 
+    // Reads Response Body from HTTP Request to String
+    // Will fail on Network Errors
     @Override
     public String get() throws IOException {
 

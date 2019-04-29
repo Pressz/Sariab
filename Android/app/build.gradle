@@ -7,7 +7,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.gordarg.goldenrose"
+        applicationId "com.gordarg.sariab"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
@@ -23,8 +23,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:23.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
@@ -39,5 +39,5 @@ dependencies {
     // implementation 'com.google.android.gms:play-services-location:15.0.1'
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.github.markushi:circlebutton:1.1'
-
+    implementation files('lib/json-20140107.jar')
 }

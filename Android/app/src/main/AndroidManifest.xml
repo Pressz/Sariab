@@ -14,24 +14,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="com.gordarg.sariab.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <!-- TODO: maybe here its the start point! -->
-        </activity>
-        <activity
-            android:name="com.gordarg.sariab.ProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.gordarg.sariab.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.gordarg.sariab.DetailsActivity"
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- TODO: maybe here its the start point! -->
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

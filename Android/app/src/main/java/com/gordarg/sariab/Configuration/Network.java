@@ -7,6 +7,7 @@ public enum Network implements IConfiguration {
 //    api_end_point("http://192.168.42.163/Sariab/Backend/controller/"),
     // api_end_point("http://192.168.40.1/Sariab/Backend/controller/"),
     api_end_point("http://sariab.pressz.ir/controller/"),
+    rss_end_point("http://sariab.pressz.ir/ajax/rss"),
     agent("mobile");
 
     private final String value;
